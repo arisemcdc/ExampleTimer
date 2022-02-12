@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
+    private val presenter = MainPresenter(MainModel(timer))
     private lateinit var binding: ActivityMainBinding
     private var firstCount = 0
     private var secondCount = 0
