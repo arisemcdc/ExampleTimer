@@ -1,6 +1,8 @@
 package com.example.exampletimer
 
 import android.os.CountDownTimer
+import android.provider.Settings.Global.getString
+import java.util.concurrent.TimeUnit
 
 class MainModel(private var timer: CountDownTimer) {
 
@@ -9,11 +11,14 @@ class MainModel(private var timer: CountDownTimer) {
 
       timer = object : CountDownTimer(timeMillis, 1) {
           override fun onTick(millisUntilFinished: Long) {
-              TODO("Not yet implemented")
+              var text = getString(R.string.formatted_time,
+              TimeUnit.MILLISECONDS.toMinutes(timeMillis) % 60 ,
+              TimeUnit.MILLISECONDS.toSeconds(timeMillis) % 60)
+
           }
 
           override fun onFinish() {
-              TODO("Not yet implemented")
+              val text = "Finish"
           }
 
       }

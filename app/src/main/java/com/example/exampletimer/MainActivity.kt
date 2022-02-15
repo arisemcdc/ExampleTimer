@@ -22,14 +22,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        presenter.bind(this)
         binding.apply {
             bStart.setOnClickListener {
-                if (!isStarted) {
+                /*if (!isStarted) {
                     startCountdownTimer(135000)
                 }
                 else {
                     stopTimer()
-                }
+                }*/
+                presenter.start()
             }
             addFirstPlayerPointButton.setOnClickListener {
                 firstCount++

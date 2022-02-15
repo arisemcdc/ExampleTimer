@@ -9,6 +9,7 @@ import kotlin.coroutines.CoroutineContext
 class MainPresenter (private val model: MainModel): CoroutineScope {
 
     private var view: MainView? = null
+    var text : String? = null
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.IO
 
